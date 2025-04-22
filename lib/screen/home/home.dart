@@ -33,11 +33,12 @@ class HomeView extends StatelessWidget {
                 ),
                 SizedBox(height: 25),
                 ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
+                  onPressed: () async {
+                    await Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => ProfileView()),
                     );
+                    viewModel.rebuildUi();
                   },
                   child: Text("Go To Profile"),
                 ),
